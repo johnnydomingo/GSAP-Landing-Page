@@ -23,7 +23,7 @@ anime.timeline()
     opacity: [0,1],
     easing: "easeOutExpo",
     duration: 2000,
-    delay: (el, i) => 4800 + 50 * i
+    delay: (el, i) => 6000 + 50 * i
 });
 
 TweenMax.to(".wrapper", 2, {
