@@ -1,3 +1,3 @@
-# Portfolio.V3
+# Animation Practice
 
-Hello and welcome to my newest portfolio! This site is created with HTML5, CSS3, and vanilla JavaScript in addition to GSAP (Green Sock) Animation Library.
+Practicing some animations with GSAP and Anime.js
