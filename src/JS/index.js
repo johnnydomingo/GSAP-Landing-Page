@@ -1,3 +1,37 @@
+const $bigBall = document.querySelector('.cursor__ball--big');
+const $smallBall = document.querySelector('.cursor__ball--small');
+const $hoverables = document.querySelectorAll('.hoverable');
+
+// Listeners
+document.body.addEventListener('mousemove', onMouseMove);
+for (let i = 0; i < $hoverables.length; i++) {
+  $hoverables[i].addEventListener('mouseenter', onMouseHover);
+  $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+}
+
+// Move the cursor
+function onMouseMove(e) {
+  TweenMax.to($bigBall, .4, {
+    x: e.pageX - 15,
+    y: e.pageY - 15
+  })
+  TweenMax.to($smallBall, .1, {
+    x: e.pageX - 5,
+    y: e.pageY - 7
+  })
+}
+
+// Hover an element
+function onMouseHover() {
+  TweenMax.to($bigBall, .3, {
+    scale: 4
+  })
+}
+function onMouseHoverOut() {
+  TweenMax.to($bigBall, .3, {
+    scale: 1
+  })
+}
 var textWrapper = document.querySelector('.header-1');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
@@ -49,11 +83,11 @@ tl.to(".loader", 1.6, {
     transformOrigin:"0% -100%"
 });
 
-TweenMax.to(".box", 2.4, {
-y: "-100%",
-ease: Expo.easeInOut,
-delay: 3.8,
-});
+// TweenMax.to(".box", 2.4, {
+// y: "-100%",
+// ease: Expo.easeInOut,
+// delay: 3.8,
+// });
 
 var tl = new TweenMax.staggerFrom(".menu > div", 2, {
     opacity: 0,     
