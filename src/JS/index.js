@@ -5,8 +5,8 @@ const $hoverables = document.querySelectorAll('.hoverable');
 // Listeners
 document.body.addEventListener('mousemove', onMouseMove);
 for (let i = 0; i < $hoverables.length; i++) {
-  $hoverables[i].addEventListener('mouseenter', onMouseHover);
-  $hoverables[i].addEventListener('mouseleave', onMouseHoverOut);
+  $hoverables[i].addEventListener('mouseenter');
+  $hoverables[i].addEventListener('mouseleave');
 }
 
 // Move the cursor
@@ -22,43 +22,51 @@ function onMouseMove(e) {
 }
 
 // Hover an element
-function onMouseHover() {
-  TweenMax.to($bigBall, .3, {
-    scale: 4
-  })
-}
-function onMouseHoverOut() {
-  TweenMax.to($bigBall, .3, {
-    scale: 1
-  })
-}
+// function onMouseHover() {
+//   TweenMax.to($bigBall, .3, {
+//     scale: 4
+//   })
+// }
+// function onMouseHoverOut() {
+//   TweenMax.to($bigBall, .3, {
+//     scale: 1
+//   })
+// }
 var textWrapper = document.querySelector('.header-1');
-textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+// textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline()
-.add({
-    targets: '.header-1 .letter',
-    translateY: [200,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 2000,
-    delay: (el, i) => 4800 + 50 * i
+
+gsap.to(".header-1", {
+  duration: 1,
+  y: 0,
+  opacity: 1,
+  stagger: 0.2,
+  // ease: "power2"
 });
+// anime.timeline()
+// .add({
+//     targets: '.header-1 .letter',
+//     translateY: [200,0],
+//     translateZ: 0,
+//     opacity: [0,1],
+//     easing: "easeOutExpo",
+//     duration: 2000,
+//     delay: (el, i) => 4800 + 50 * i
+// });
 
 var textWrapper = document.querySelector('.header-2');
 textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
 
-anime.timeline()
-.add({
-    targets: '.header-2 .letter',
-    translateY: [200,0],
-    translateZ: 0,
-    opacity: [0,1],
-    easing: "easeOutExpo",
-    duration: 2000,
-    delay: (el, i) => 6000 + 50 * i
-});
+// anime.timeline()
+// .add({
+//     targets: '.header-2 .letter',
+//     translateY: [200,0],
+//     translateZ: 0,
+//     opacity: [0,1],
+//     easing: "easeOutExpo",
+//     duration: 2000,
+//     delay: (el, i) => 6000 + 50 * i
+// });
 
 TweenMax.to(".wrapper", 2, {
     top: "-100%",

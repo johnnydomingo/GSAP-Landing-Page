@@ -216,7 +216,12 @@ color: #000000;
   background: #fff;
   z-index: 2;
 }
+/* about */
 
+.about-container{
+  text-align: center;
+  margin-top: 38rem;
+}
 /* media queries  */
 
 @media (max-width: 900px) {
