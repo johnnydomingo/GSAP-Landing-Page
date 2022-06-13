@@ -104,9 +104,35 @@ var tl = new TweenMax.staggerFrom(".menu > div", 2, {
     delay: 4.2
 }, 0.1);
 
-var tl = new TweenMax.staggerFrom(".hero-container > div", 2, {
+var tl = new TweenMax.staggerFrom(".hero-description", 2, {
     opacity: 0,     
     y: 30,
     ease: Expo.easeInOut,
     delay: 4.2
 }, 0.1);
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+
+// create the smooth scroller FIRST!
+const smoother = ScrollSmoother.create({
+  content: "#content",
+  smooth: 1,
+  normalizeScroll: true, // prevents address bar from showing/hiding on most devices, solves various other browser inconsistencies
+  ignoreMobileResize: true, // skips ScrollTrigger.refresh() on mobile resizes from address bar showing/hiding
+  effects: true,
+  preventDefault: true
+ });
+ 
+ gsap.set(".hero-description", {
+  yPercent: -150,
+  opacity: 1
+ });
+ 
+//  let timeline = gsap.timeline();
+//  let mySplitText = new SplitText("#split-stagger", { type: "words,chars" });
+//  let chars = mySplitText.chars;
+ 
+//  chars.forEach((char, i) => {
+//   smoother.effects(char, { speed: 1, lag: (i + 1) * 0.1 });
+//  });
+ 
