@@ -104,7 +104,7 @@ var tl = new TweenMax.staggerFrom(".menu > div", 2, {
     delay: 4.2
 }, 0.1);
 
-var tl = new TweenMax.staggerFrom(".hero-description", 2, {
+var tl = new TweenMax.staggerFrom(".header", 2, {
     opacity: 0,     
     y: 30,
     ease: Expo.easeInOut,
